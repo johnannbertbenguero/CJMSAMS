@@ -27,7 +27,7 @@
     </form>
   </div>
   
-  <!-- Link to external JavaScript file -->
+  <!-- Link to external JavaScript fil1 -->
   <!-- <script src="../Javascript/Login.js"></script> -->
 </body>
 </html>
