@@ -34,6 +34,7 @@
                     <th>Student ID Number</th>
                     <th>Last Name</th>
                     <th>First Name</th>
+                    <th>Middle Name</th>
                     <th>Guardian Contact Number</th>
                     <th>Actions</th>
                 </tr>
@@ -66,8 +67,8 @@
                             <input type="text" class="form-control" id="firstName" required>
                         </div>
                         <div class="form-group">
-                            <label for="lastName">Middle Name:</label>
-                            <input type="text" class="form-control" id="lastName" required>
+                            <label for="middleName">Middle Name:</label>
+                            <input type="text" class="form-control" id="middleName" required>
                         </div>
                         <div class="form-group">
                             <label for="guardianContactNumber">Guardian Contact Number:</label>
