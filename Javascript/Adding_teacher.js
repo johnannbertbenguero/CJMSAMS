@@ -45,20 +45,23 @@ function loadTeachers() {
         type: 'GET',
         dataType: 'json',
         success: function(response) {
+            console.log("Response from server:", response);  // Debugging line
+            
             if (response.status === 'success') {
-                const teachers = response.data;
+                // Assign fetched data to the global teachers array
+                teachers = response.data;
+
                 const tableBody = document.getElementById('teacherTableBody');
                 tableBody.innerHTML = ''; // Clear existing rows
 
                 // Populate the table with the retrieved data
                 teachers.forEach((teacher, index) => {
                     const row = document.createElement('tr');
-
                     row.innerHTML = `
                         <td>${teacher.user_id}</td>
                         <td>${teacher.last_name}</td>
                         <td>${teacher.first_name}</td>
-                        <td>${teacher.advisory_class}</td>
+                        <td>${teacher.advisory_class || '-'}</td>
                         <td>${teacher.phone_number}</td>
                         <td>${teacher.email}</td>
                         <td>
@@ -69,23 +72,29 @@ function loadTeachers() {
                     tableBody.appendChild(row);
                 });
             } else {
+                console.error('Error loading teachers:', response.message);
                 alert('Error loading teachers: ' + response.message);
             }
         },
         error: function(xhr, status, error) {
+            console.error('AJAX Error:', error);
             alert('AJAX Error: ' + error);
         }
     });
-}    
+}
+
+// Call loadTeachers when the page loads to ensure data is fetched immediately
+document.addEventListener('DOMContentLoaded', loadTeachers);
+
 
 
 function editTeacher(index) {
     const teacher = teachers[index];
-    document.getElementById('facultyNumber').value = teacher.facultyNumber;
-    document.getElementById('lastName').value = teacher.lastName;
-    document.getElementById('firstName').value = teacher.firstName;
-    document.getElementById('contactNumber').value = teacher.contactNumber;
-    document.getElementById('emailAddress').value = teacher.emailAddress;
+    document.getElementById('user_id').value = teacher.user_id;
+    document.getElementById('last_name').value = teacher.last_name;
+    document.getElementById('first_name').value = teacher.first_name;
+    document.getElementById('phone_number').value = teacher.phone_number;
+    document.getElementById('email').value = teacher.email;
 
     // Reset the grade level checkboxes
     populateGradeLevels();

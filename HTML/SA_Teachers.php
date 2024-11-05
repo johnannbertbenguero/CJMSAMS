@@ -28,24 +28,24 @@
         </button>
     
         <div class="table-responsive">
-            <table class="table table-bordered table-striped mt-4">
-                <thead>
-                    <tr>
-                        <th>Teacher ID Number</th>
-                        <th>Last Name</th>
-                        <th>First Name</th>
-                        <th>Advisory Class</th>
-                        <th>Contact Number</th>
-                        <th>Email Address</th>
-                        <th>Actions</th> <!-- Removed Username and Password columns -->
-                    </tr>
-                </thead>
-                <tbody id="teacherTableBody">
-                    <!-- teachers List will be dynamically added here -->
-                </tbody>
-            </table>
-        </div>
-    </div>
+    <table class="table table-bordered table-striped mt-4">
+        <thead>
+            <tr>
+                <th>Teacher ID Number</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Advisory Class</th>
+                <th>Contact Number</th>
+                <th>Email Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="teacherTableBody">
+            <!-- Teachers List will be dynamically added here -->
+        </tbody>
+    </table>
+</div>
+
     
     <!-- Modal for Adding/Editing Teacher -->
     <div class="modal" id="addTeacherModal">
@@ -61,19 +61,19 @@
                 <div class="modal-body">
                     <form id="teacherForm">
                         <div class="form-group">
-                            <label for="lastName">Last Name:</label>
+                            <label for="last_name">Last Name:</label>
                             <input type="text" class="form-control" id="last_name" required>
                         </div>
                         <div class="form-group">
-                            <label for="firstName">First Name:</label>
+                            <label for="first_name">First Name:</label>
                             <input type="text" class="form-control" id="first_name" required>
                         </div>
                         <div class="form-group">
-                            <label for="contactNumber">Contact Number:</label>
+                            <label for="phone_number">Contact Number:</label>
                             <input type="text" class="form-control" id="phone_number" required>
                         </div>
                         <div class="form-group">
-                            <label for="emailAddress">Email Address:</label>
+                            <label for="email">Email Address:</label>
                             <input type="email" class="form-control" id="email" required>
                         </div>
                     </form>

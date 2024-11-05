@@ -40,7 +40,7 @@
                     </tr>
                 </thead>
                 <tbody id="guardTableBody">
-                    <!-- Guards List will be dynamically added here -->
+                 <!-- Guards List will be dynamically added here -->
                 </tbody>
             </table>
         </div>
