@@ -21,14 +21,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ContactNumber = $_POST['phone_number'];  // Corrected to match JavaScript
 
     // Set default values for guard role and password
-    $role = "Teacher";
+    $role = "guard";
     $password = "password";  // Consider hashing this for security
 
     $stmt = $conn->prepare("INSERT INTO users (first_name, last_name, email, password, role, phone_number) VALUES (?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("ssssss", $firstName, $lastName, $email, $password, $role, $ContactNumber);
     
     if ($stmt->execute()) {
-        echo "New Teacher added successfully";
+        echo "New guard added successfully";
     } else {
         echo "Error: " . $stmt->error;
     }

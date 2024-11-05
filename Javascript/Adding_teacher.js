@@ -110,52 +110,34 @@
     // }
 
     function addTeacher() {
-        const facultyNumber = document.getElementById('facultyNumber').value;
-        const lastName = document.getElementById('lastName').value;
-        const firstName = document.getElementById('firstName').value;
-        const contactNumber = document.getElementById('contactNumber').value;
-        const emailAddress = document.getElementById('emailAddress').value;
+        const firstName = document.getElementById('first_name').value;
+        const lastName = document.getElementById('last_name').value;
+        const email = document.getElementById('email').value;  // Ensure an email input field is available
+        const ContactNumber = document.getElementById('phone_number').value;
     
-        const selectedGradeLevels = [];
-        const adviserRoles = [];
-    
-        gradeLevels.forEach(level => {
-            const gradeCheckbox = document.getElementById(`gradeLevel-${level}`);
-            const adviserCheckbox = document.getElementById(`adviser-${level}`);
-    
-            if (gradeCheckbox.checked) {
-                selectedGradeLevels.push(level);
-                adviserRoles.push(adviserCheckbox.checked ? 'Adviser' : 'Not Adviser');
-            }
-        });
-    
-        const gradeLevelAssignments = selectedGradeLevels.map((level, index) => `${level} (${adviserRoles[index]})`).join(", ");
-    
+        if (!firstName || !lastName || !email || !ContactNumber) {
+            console.error("One or more required fields are missing.");
+            alert("Please fill in all required fields.");
+            return;
+        }
         $.ajax({
-            url: '../Php/add_teacher.php',
+            url: '../PHP/add_teacher.php',  // Updated URL if needed
             type: 'POST',
-            dataType: 'json',
             data: {
-                facultyNumber: facultyNumber,
-                lastName: lastName,
-                firstName: firstName,
-                contactNumber: contactNumber,
-                emailAddress: emailAddress,
-                gradeLevel: gradeLevelAssignments
+                first_name: firstName,
+                last_name: lastName,
+                email: email,
+                phone_number: ContactNumber  // This should match PHP variable names
             },
             success: function(response) {
-                if (response.status === 'success') {
-                    alert(response.message);
-                    //loadTeachers(); // Refresh the table data
-                    $('#addTeacherModal').modal('hide');
-                    document.getElementById('teacherForm').reset();
-                    populateGradeLevels();
-                } else {
-                    alert(response.message);
-                }
+                console.log("Add guard response:", response); // Debug: Show response
+                alert(response);
+                $('#addGuardModal').modal('hide');
+                document.getElementById('teacherForm').reset();
+                loadGuards(); // Reload guards table
             },
-            error: function(xhr, status, error) {
-                alert('AJAX Error: ' + error);
+            error: function(error) {
+                console.error("Error adding guard:", error); // Debug: Log error
             }
         });
     }

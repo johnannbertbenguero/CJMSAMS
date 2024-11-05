@@ -58,34 +58,29 @@
 
             <!-- Modal Body -->
             <div class="modal-body">
-                 <form id="teacherForm" id="teacherForm" onsubmit="event.preventDefault(); addTeacher();"> <!--added id="teacherForm" onsubmit="event.preventDefault(); addTeacher();"-->
-                    <div class="form-group">
-                        <label for="facultyNumber">Faculty Number:</label>
-                        <input type="text" class="form-control" id="facultyNumber" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="lastName">Last Name:</label>
-                        <input type="text" class="form-control" id="lastName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="firstName">First Name:</label>
-                        <input type="text" class="form-control" id="firstName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contactNumber">Contact Number:</label>
-                        <input type="text" class="form-control" id="contactNumber" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="emailAddress">Email Address:</label>
-                        <input type="email" class="form-control" id="emailAddress" required>
-                    </div>
-
-                    <div class="form-group">
+                 <form id="teacherForm"> <!--added id="teacherForm" onsubmit="event.preventDefault(); addTeacher();"-->
+                 <div class="form-group">
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" class="form-control" id="last_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="firstName">First Name:</label>
+                            <input type="text" class="form-control" id="first_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactNumber">Contact Number:</label>
+                            <input type="text" class="form-control" id="phone_number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="emailAddress">Email Address:</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                    <!-- <div class="form-group">
                         <label for="gradeLevel">Assigned Grade Level and Adviser Role:</label>
                         <div id="gradeLevelContainer">
-                            <!-- Checkbox inputs for grade levels and adviser roles will be added here dynamically -->
+                            // Checkbox inputs for grade levels and adviser roles will be added here dynamically 
                         </div>
-                    </div>
+                    </div> -->
                 </form>
             </div>
 

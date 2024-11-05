@@ -6,33 +6,39 @@
         let editIndex = -1;
 
         function addGuard() {
-            const guardIdNumber = document.getElementById('guardIdNumber').value;
-            const lastName = document.getElementById('lastName').value;
-            const firstName = document.getElementById('firstName').value;
-            const contactNumber = document.getElementById('contactNumber').value;
-            const emailAddress = document.getElementById('emailAddress').value;
-
-            const guard = {
-                guardIdNumber: guardIdNumber,
-                lastName: lastName,
-                firstName: firstName,
-                contactNumber: contactNumber,
-                emailAddress: emailAddress
-            };
-
-            if (editIndex === -1) {
-                guards.push(guard);
-            } else {
-                guards[editIndex] = guard;
-                editIndex = -1;
+            const firstName = document.getElementById('first_name').value;
+            const lastName = document.getElementById('last_name').value;
+            const email = document.getElementById('email').value;  // Ensure an email input field is available
+            const ContactNumber = document.getElementById('phone_number').value;
+        
+            if (!firstName || !lastName || !email || !ContactNumber) {
+                console.error("One or more required fields are missing.");
+                alert("Please fill in all required fields.");
+                return;
             }
-
-            updateGuardTable();
-
-            document.getElementById('guardForm').reset();
-
-            $('#addGuardModal').modal('hide');
+            $.ajax({
+                url: '../PHP/add_guard.php',  // Updated URL if needed
+                type: 'POST',
+                data: {
+                    first_name: firstName,
+                    last_name: lastName,
+                    email: email,
+                    phone_number: ContactNumber  // This should match PHP variable names
+                },
+                success: function(response) {
+                    console.log("Add guard response:", response); // Debug: Show response
+                    alert(response);
+                    $('#addGuardModal').modal('hide');
+                    document.getElementById('guardForm').reset();
+                    loadGuards(); // Reload guards table
+                },
+                error: function(error) {
+                    console.error("Error adding guard:", error); // Debug: Log error
+                }
+            });
         }
+        
+        
 
         function updateGuardTable() {
             const tableBody = document.getElementById('guardTableBody');

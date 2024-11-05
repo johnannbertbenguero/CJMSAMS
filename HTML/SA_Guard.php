@@ -59,24 +59,20 @@
                 <div class="modal-body">
                     <form id="guardForm">
                         <div class="form-group">
-                            <label for="guardIdNumber">Guard ID Number:</label>
-                            <input type="text" class="form-control" id="guardIdNumber" required>
-                        </div>
-                        <div class="form-group">
                             <label for="lastName">Last Name:</label>
-                            <input type="text" class="form-control" id="lastName" required>
+                            <input type="text" class="form-control" id="last_name" required>
                         </div>
                         <div class="form-group">
                             <label for="firstName">First Name:</label>
-                            <input type="text" class="form-control" id="firstName" required>
+                            <input type="text" class="form-control" id="first_name" required>
                         </div>
                         <div class="form-group">
                             <label for="contactNumber">Contact Number:</label>
-                            <input type="text" class="form-control" id="contactNumber" required>
+                            <input type="text" class="form-control" id="phone_number" required>
                         </div>
                         <div class="form-group">
                             <label for="emailAddress">Email Address:</label>
-                            <input type="email" class="form-control" id="emailAddress" required>
+                            <input type="email" class="form-control" id="email" required>
                         </div>
                     </form>
                 </div>
