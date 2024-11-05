@@ -13,7 +13,7 @@
     <div class="header">
         <div class="back-button">
             <a href="SuperAdmin_Dashboard.php"><img src="../Images/arrowback.png" alt="arrow back" class="back"> </a>
-            <h1>Guards List</h1>
+            <h1>Teachers List</h1>
         </div>
         <div class="admin-info">
             <p>Admin Name</p>
@@ -23,7 +23,7 @@
     </div>
     
     <div class="container">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addGuardModal">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTeacherModal">
             Add New Teacher
         </button>
     
@@ -41,7 +41,7 @@
                     </tr>
                 </thead>
                 <tbody id="teacherTableBody">
-                    <!-- Guards List will be dynamically added here -->
+                    <!-- teachers List will be dynamically added here -->
                 </tbody>
             </table>
         </div>
@@ -81,7 +81,7 @@
 
                 <!-- Modal Footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" onclick="addGuard()">Save</button>
+                    <button type="button" class="btn btn-success" onclick="addTeacher()">Save</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
             </div>
