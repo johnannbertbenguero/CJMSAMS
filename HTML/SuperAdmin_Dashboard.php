@@ -12,6 +12,7 @@
         <h1>Dashboard</h1>
         <div class="admin-profile">
           <span>Admin Name</span> 
+          <a href="Change_password.html" class="Change_password">Change Password</a>
           <a href="Account.php" class="logout">Logout</a> <!-- Link to logout page -->
         </div>
       </header>

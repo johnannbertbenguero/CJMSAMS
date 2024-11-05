@@ -84,3 +84,31 @@ p {
   height: auto; /* Maintain aspect ratio */
   margin-left: 100px;
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+  body {
+    background-size: cover;
+    animation: none; /* Optional: stop animation for smaller screens */
+  }
+
+  .login-container {
+    width: 85%; /* Adjust width for smaller screens */
+    padding: 20px; /* Reduce padding */
+  }
+
+  .logo-container img {
+    width: 80px; /* Resize logo for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    width: 90%; /* Further adjust width for phones */
+    padding: 15px; /* Reduce padding for phones */
+  }
+
+  .logo-container img {
+    width: 60px; /* Resize logo further for phones */
+  }
+}

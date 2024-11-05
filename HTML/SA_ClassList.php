@@ -14,11 +14,12 @@
 <body>
     <div class="header">
         <div class="back-button">
-            <a href="SA_Students.php"><img src="../Images/arrowback.png" alt="arrow back" class="back"> </a>
+            <a href="SA_Students.php" href="javascript:history.back();"><img src="../Images/arrowback.png" alt="arrow back" class="back"> </a>
             <h1 id="gradeTitle"></h1>
         </div>
         <div class="admin-info">
             <p>Admin Name</p>
+            <a href="Change_password.html" class="Change_password">Change Password</a>
             <a href="Account.php" class="logout">Logout</a>
         </div>
     </div>
@@ -27,22 +28,23 @@
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addStudentModal" onclick="prepareAddStudentForm()">
             Add New Student
         </button>
-
-        <table class="table table-bordered table-striped mt-4">
-            <thead>
-                <tr>
-                    <th>Student ID Number</th>
-                    <th>Last Name</th>
-                    <th>First Name</th>
-                    <th>Middle Name</th>
-                    <th>Guardian Contact Number</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="studentTableBody">
-                <!-- Students List will be dynamically added here -->
-            </tbody>
-        </table>
+    
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped mt-4">
+                <thead>
+                    <tr>
+                        <th>Student ID Number</th>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Guardian Contact Number</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTableBody">
+                    <!-- Students List will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <!-- Modal for Adding/Updating Student -->
@@ -67,8 +69,8 @@
                             <input type="text" class="form-control" id="firstName" required>
                         </div>
                         <div class="form-group">
-                            <label for="middleName">Middle Name:</label>
-                            <input type="text" class="form-control" id="middleName" required>
+                            <label for="lastName">Middle Name:</label>
+                            <input type="text" class="form-control" id="lastName" required>
                         </div>
                         <div class="form-group">
                             <label for="guardianContactNumber">Guardian Contact Number:</label>

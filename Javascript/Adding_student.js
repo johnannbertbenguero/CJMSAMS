@@ -6,9 +6,7 @@ let students = [];
 
 function getGradeLevelFromURL() {
     const urlParams = new URLSearchParams(window.location.search);
-    const grade = urlParams.get('grade');
-    console.log("Grade level from URL:", grade); // Debug: Check grade level
-    return grade;
+    return urlParams.get('grade'); // Get the 'grade' parameter from the URL
 }
 
 function addStudent() {
@@ -22,42 +20,32 @@ function addStudent() {
         type: 'POST',
         data: {
             first_name: firstName,
-            last_name: lastName,
+            last_name: lastName,    
             grade_level: gradeLevel,
             guardian_contact_number: guardianContactNumber
         },
         success: function(response) {
-            console.log("Add student response:", response); // Debug: Show response
-            alert(response);
-            $('#addStudentModal').modal('hide');
-            document.getElementById('studentForm').reset();
+            alert(response); // Display response from PHP
+            $('#addStudentModal').modal('hide'); // Close modal
+            document.getElementById('studentForm').reset(); // Reset form
             loadStudents(); // Reload students table
         },
         error: function(error) {
-            console.error("Error adding student:", error); // Debug: Log error
+            console.error("Error adding student: ", error);
         }
     });
 }
 
 function loadStudents() {
-    const gradeLevel = getGradeLevelFromURL();
-    console.log("Loading students for grade:", gradeLevel); // Debug
+    const gradeLevel = getGradeLevelFromURL(); // Function to retrieve grade level from URL
 
     $.ajax({
         url: '../PHP/get_students.php',
         type: 'GET',
-        data: { grade: gradeLevel },
-        success: function(response) {
-            console.log("Response from server:", response); // Debug
-
-            try {
-                students = JSON.parse(response);
-                console.log("Parsed students:", students); // Debug
-            } catch (error) {
-                console.error("Error parsing JSON:", error); // Debug
-                return;
-            }
-
+        data: { grade: gradeLevel }, // Send grade level as a parameter
+        success: function(students) {
+            students = JSON.parse(students); // Parse JSON response
+            console.log("Fetched Students Data:", students); // Check the data format
             const tableBody = document.getElementById('studentTableBody');
             tableBody.innerHTML = ''; // Clear previous entries
 
@@ -80,16 +68,14 @@ function loadStudents() {
             });
         },
         error: function(error) {
-            console.error("Error fetching students:", error); // Debug
+            console.error("Error fetching students: ", error);
         }
     });
 }
 
-
 function prepareAddStudentForm() {
-    console.log("Preparing Add Student Form"); // Debug: Check form preparation
     document.querySelector('.modal-title').innerText = 'Add New Student';
     document.querySelector('#submitButton').innerText = 'Add';
     document.querySelector('#submitButton').setAttribute('onclick', 'addStudent()');
-    document.getElementById('studentForm').reset();
+    document.getElementById('studentForm').reset(); // Reset form fields
 }
