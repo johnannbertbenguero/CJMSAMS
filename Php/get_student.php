@@ -30,7 +30,7 @@ if (isset($_GET['grade'])) {
     $stmt->close();
 } else {
     echo json_encode(["error" => "Grade level not specified"]);
-}
+}//modify
 
 $conn->close();
 ?>
