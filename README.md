@@ -1,2 +1,0 @@
-# CJMSAMS
-Vizion Tech
