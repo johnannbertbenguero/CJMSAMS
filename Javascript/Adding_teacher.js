@@ -39,44 +39,44 @@ function addTeacher() {
     });
 }
 
-// function loadTeachers() {
-//     $.ajax({
-//         url: '../Php/get_teachers.php',
-//         type: 'GET',
-//         dataType: 'json',
-//         success: function(response) {
-//             if (response.status === 'success') {
-//                 const teachers = response.data;
-//                 const tableBody = document.getElementById('teacherTableBody');
-//                 tableBody.innerHTML = ''; // Clear existing rows
+function loadTeachers() {
+    $.ajax({
+        url: '../Php/get_teachers.php',
+        type: 'GET',
+        dataType: 'json',
+        success: function(response) {
+            if (response.status === 'success') {
+                const teachers = response.data;
+                const tableBody = document.getElementById('teacherTableBody');
+                tableBody.innerHTML = ''; // Clear existing rows
 
-//                 // Populate the table with the retrieved data
-//                 teachers.forEach((teacher, index) => {
-//                     const row = document.createElement('tr');
+                // Populate the table with the retrieved data
+                teachers.forEach((teacher, index) => {
+                    const row = document.createElement('tr');
 
-//                     row.innerHTML = `
-//                         <td>${teacher.facultyNumber}</td>
-//                         <td>${teacher.lastName}</td>
-//                         <td>${teacher.firstName}</td>
-//                         <td>${teacher.contactNumber}</td>
-//                         <td>${teacher.emailAddress}</td>
-//                         <td>${teacher.gradeLevel}</td>
-//                         <td>
-//                             <button class="btn btn-info btn-sm" onclick="editTeacher(${index})">Edit</button>
-//                             <button class="btn btn-danger btn-sm" onclick="deleteTeacher(${index})">Delete</button>
-//                         </td>
-//                     `;
-//                     tableBody.appendChild(row);
-//                 });
-//             } else {
-//                 alert('Error loading teachers: ' + response.message);
-//             }
-//         },
-//         error: function(xhr, status, error) {
-//             alert('AJAX Error: ' + error);
-//         }
-//     });
-// }    
+                    row.innerHTML = `
+                        <td>${teacher.user_id}</td>
+                        <td>${teacher.last_name}</td>
+                        <td>${teacher.first_name}</td>
+                        <td>${teacher.advisory_class}</td>
+                        <td>${teacher.phone_number}</td>
+                        <td>${teacher.email}</td>
+                        <td>
+                            <button class="btn btn-info btn-sm" onclick="editTeacher(${index})">Edit</button>
+                            <button class="btn btn-danger btn-sm" onclick="deleteTeacher(${index})">Delete</button>
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } else {
+                alert('Error loading teachers: ' + response.message);
+            }
+        },
+        error: function(xhr, status, error) {
+            alert('AJAX Error: ' + error);
+        }
+    });
+}    
 
 
 function editTeacher(index) {
