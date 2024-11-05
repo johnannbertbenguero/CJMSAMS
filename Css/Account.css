@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Gradient overlay */
+    url('../Images/CJM_background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    animation: zoom-out 10s infinite;
+}
+@keyframes zoom-out {
+  0% {
+    background-size: 120%; /* Start larger */
+    background-position: center; /* Centered */
+  }
+  100% {
+    background-size: 100%; /* End at normal size */
+    background-position: center; /* Centered */
+  }
+}
+.logo-container img {
+  width: 100px; /* Adjust this value to make the logo smaller */
+  height: auto; /* Maintain aspect ratio */
+}
+.account-container {
+  background-color: #fffcfc;
+  padding: 20px 50px; /* Reduced padding */
+  width: 250px; /* Reduced width */
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  margin-left: 20px; /* Adjust margins if necessary */
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.account-container p {
+text-align: center;
+}
+  .button-link {
+    display: block;
+    padding: 20px 40px;
+    margin-bottom: 20px; /* Add space between buttons */
+    margin-right: 70px;
+    background-color: #26308b;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+    width: 150px; /* Set button width */
+    margin-left: 70px;
+    margin-top: 0px;
+  }
+  
+  .button-link:hover {
+    background-color: #df1c18; /* Hover effect */
+  }
+  

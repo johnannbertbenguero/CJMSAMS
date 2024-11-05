@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christ Jezus Montessori School Inc. Student Attendance Monitoring System</title>
+  <link rel="icon" href="../Images/CJMS.png" type="image/png">
+  <link rel="stylesheet" href="../Css/Attendance_log.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Attendance Log</h1>
+    
+    <!-- Back button, the href will be set dynamically -->
+    <a id="backButton" class="back-button"><img src="../Images/arrowback.png" alt="arrow back" class="back"></a>
+    
+    <div class="admin-info">
+      <p>Admin Name</p>
+      <a href="Account.html" class="logout">Logout</a>
+    </div>
+  </div>
+
+  <!-- Filter section -->
+  <div class="filter-section">
+    <label for="student-filter">Student:</label>
+    <input type="text" id="student-filter" name="student-filter" placeholder="Enter Student Name">
+    <button class="filter-btn" onclick="filterAttendance()">Filter</button>
+    
+    <label for="start-date-filter">Date Range:</label>
+    <input type="date" id="start-date-filter" name="start-date-filter">
+    <label for="end-date-filter">To</label>
+    <input type="date" id="end-date-filter" name="end-date-filter">
+    <button class="download-btn">Download</button>
+  </div>
+    
+  <div class="table-container">
+    <table class="attendance-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Last Name</th>
+          <th>First Name</th>
+          <th>Student ID</th>
+          <th>Time In</th>
+          <th>Time Out</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="attendance-body">
+        <tr>
+          <td>2024-10-01</td>
+          <td>Guilalas</td>
+          <td>John Gabriel</td>
+          <td>20240001</td>
+          <td>08:00 AM</td>
+          <td>03:00 PM</td>
+          <td>Present</td>
+        </tr>
+        <tr>
+          <td>2024-10-01</td>
+          <td>Canapi</td>
+          <td>Raymart</td>
+          <td>20240002</td>
+          <td>08:10 AM</td>
+          <td>03:20 PM</td>
+          <td>Present</td>
+        </tr>
+        <tr>
+          <td>2024-10-01</td>
+          <td>Teodoro</td>
+          <td>Dan Vincent</td>
+          <td>20240003</td>
+          <td>08:05 AM</td>
+          <td>03:10 PM</td>
+          <td>Present</td>
+        </tr>
+      </tbody>
+    </table>
+  </div> 
+
+  <div class="footer">
+    <p>© 2024 Christ Jezus Montessori School Inc. Student Attendance Monitoring System</p>
+  </div>
+
+  <script src="../Javascript/Attendance_log.js"></script>
+</body>
+</html>

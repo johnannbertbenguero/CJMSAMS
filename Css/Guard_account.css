@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Gradient overlay */
+    url('../Images/CJM_background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    animation: zoom-out 10s infinite;
+  }
+  @keyframes zoom-out {
+  0% {
+    background-size: 120%; /* Start larger */
+    background-position: center; /* Centered */
+  }
+  100% {
+    background-size: 100%; /* End at normal size */
+    background-position: center; /* Centered */
+  }
+  }
+  
+  .login-container {
+    background-color: #fffcfc;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    width: 300px;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 40px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+  
+  input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%;
+    padding: 10px 1px;
+    margin: 10px 0px;
+    border: 1px solid #263092;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #263092;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #df1c18;
+  }
+  
+  .error {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  p {
+    text-align: center;
+  }
+  .logo-container img {
+    width: 100px; /* Adjust this value to make the logo smaller */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 100px;
+  }
