@@ -14,9 +14,9 @@
         <img src="../Images/CJMS.png" alt="Logo">
        </div>
        <p>Please Tap or Click your Destination</p>
-       <a href="Login.php?role=admin" class="button-link">Admin</a>
-       <a href="Login.php?role=teacher" class="button-link">Teacher</a>
-       <a href="Login.php?role=guard" class="button-link">Guard</a>
+       <a href="Login.html?role=admin" class="button-link">Admin</a>
+       <a href="Login.html?role=teacher" class="button-link">Teacher</a>
+       <a href="Login.html?role=guard" class="button-link">Guard</a>
        
     </div>
 </body>

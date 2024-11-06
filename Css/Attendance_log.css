@@ -38,10 +38,11 @@ body {
 .admin-info {
   display: flex;
   align-items: center;
+  gap: 15px;
 }
 
 .admin-info p {
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .logout {
@@ -51,6 +52,16 @@ body {
 
 .logout:hover {
   text-decoration: underline;
+}
+
+.Change_password{
+  color: #fff;
+  text-decoration: none;
+}
+
+.Change_password:hover {
+  text-decoration: underline;
+  color: #f5f5f5;
 }
 
 .container {
@@ -144,4 +155,84 @@ body {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: large;
+    margin-left: 45px; /* Reduce margin on smaller screens */
+  }
+
+  .back{
+    width: 20px;
+    margin-top: 20px;
+  }
+
+
+  .filter-section {
+    flex-direction: column;
+    padding: 20px;
+    margin: 40px;
+    display: flex;
+    gap: 10px;
+   
+  }
+
+  .filter-btn, .download-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .table-container {
+    margin: 30px 10px;
+    font-size: smaller;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 70px;
+  }
+
+  .attendance-table th, .attendance-table td {
+    padding: 10px;
+  }
+
+  .footer {
+    font-size: smaller;
+    margin-top: 50px;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 16px;
+    margin-left: 10px;
+  }
+  
+  .filter-section {
+    padding: 10px;
+    margin: 15px;
+  }
+
+  .filter-btn, .download-btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .table-container {
+    margin: 20px 5px;
+  }
+
+  .attendance-table th, .attendance-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .footer {
+    font-size: smaller;
+    margin-top: 20px;
+  }
 }

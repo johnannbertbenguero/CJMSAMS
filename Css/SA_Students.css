@@ -34,10 +34,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  gap: 15px;
 }
 
 .admin-info p {
-  margin-right: 20px; 
+  margin-right: 10px; 
   margin-bottom: 0;    
 }
 
@@ -50,6 +51,16 @@ body {
   text-decoration: underline;
 }
 
+.Change_password{
+  color: #fff;
+  text-decoration: none;
+}
+
+.Change_password:hover {
+  text-decoration: underline;
+  color: #f5f5f5;
+}
+
 .card-link {
   text-decoration: none;
   display: block;
@@ -59,7 +70,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* Four columns */
   gap: 50px; /* Adjust the gap for the space between each module */
-  padding: 20px;
+  padding: 30px;
   margin-top: 5px;
 }
 
@@ -88,12 +99,76 @@ body {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .dashboard-container {
-    grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+    grid-template-columns: repeat(1, 1fr); /* one columns on smaller screens */
+    gap: 25px;
+  }
+
+  .header {
+    flex-wrap: wrap; /* Allows header to wrap for smaller screens */
+    padding: 10px;
+  }
+
+  .header h1 {
+    font-size: large;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .admin-info p {
+    margin-right: 10px;
+  }
+
+  .table {
+    min-width: 600px;
+    margin-left: 20px;
+  }
+
+  .btn-primary {
+    margin-left: 20px;
+  }
+
+  .back{
+    width: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
   }
 }
 
 @media (max-width: 480px) {
   .dashboard-container {
     grid-template-columns: 1fr; /* One column on extra small screens */
+    gap: 20px;
+  }
+
+  .header {
+    flex-wrap: wrap; /* Allows header to wrap for smaller screens */
+    padding: 5px;
+  }
+
+  .header h1 {
+    font-size: large;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .admin-info p {
+    margin-right: 5px;
+  }
+
+  .table {
+    min-width: 500px;
+    margin-left: 10px;
+  }
+
+  .btn-primary {
+    margin-left: 20px;
+  }
+
+  .back{
+    width: 15px;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 }

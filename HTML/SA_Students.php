@@ -17,6 +17,7 @@
       </div>
       <div class="admin-info">
           <p>Admin Name</p>
+          <a href="Change_password.html" class="Change_password">Change Password</a>
           <a href="Account.php" class="logout">Logout</a>
       </div>
   </div>

@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    background-color: #26308b;
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .back-button {
+    display: flex;
+    align-items: center;
+  }
+  .back {
+    width: 25px;
+    margin-right: 15px; 
+  }
+  .header h1 {
+    font-size: 24px;
+  }
+  .admin-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+  }
+  
+  .admin-info p {
+    margin-right: 10px; 
+    margin-bottom: 0;    
+  }
+  
+  .logout {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .logout:hover {
+    text-decoration: underline;
+    color: #fff;
+  }
+  
+  .Change_password{
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .Change_password:hover {
+    text-decoration: underline;
+    color: #f5f5f5;
+  }
+  
+  .container {
+    margin-top: 30px;
+    padding: 30px 5px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: smaller;
+  }
+  
+  .modal-header {
+    background-color: #26308b;
+    color: white;
+    font-size: smaller;
+  }
+  .modal-body{
+    font-size: smaller;
+  }
+  
+  .table-responsive {
+    overflow-x: auto; /* Keep this for sliding */
+    width: 100%; /* Ensures the container takes full width */
+  }
+  
+  .table {
+    min-width: 950px; /* Set a minimum width for the table */
+    width: auto; /* Allows the table to adjust to its content */
+    margin-left: 80px;
+  }
+  
+  .table th, .table td {
+    vertical-align: middle;
+    text-align: center;
+    white-space: nowrap; /* Prevents line breaks */
+  }
+  
+  
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adds space between buttons */
+  }
+  
+    
+    .actions button {
+    margin: 0 5px;
+    }
+  
+  .btn-primary {
+    margin-top: 10px;
+    background-color: #26308b;
+    border-color: #26308b;
+    font-size: small;
+    margin-left: 80px;
+  }
+  
+  .btn-save {
+    background-color: #26308b;
+    color: white;
+    font-size: smaller;
+  }
+  
+  .btn-save:hover {
+    background-color: #3543be;
+    color: white;
+  }
+  
+  .btn-close {
+    background-color: #ec1618;
+    color: white;
+    font-size: smaller;
+  
+  }
+  .btn-close:hover{
+    background-color: #f83f42;
+    color: white;
+  }
+  
+  .btn-edit {
+    background-color: #26308b;
+    border-color: #3543be;
+    font-size: smaller;
+    color: #fff;
+  }
+  .btn-edit:hover {
+    background-color: #3543be;
+     color: #fff;
+  }
+  
+  .btn-delete {
+    background-color: #ec1618;
+    border-color: #f83f42;
+    font-size: smaller;
+    color: #fff;
+  }
+  .btn-delete:hover {
+    background-color: #f83f42;
+     color: #fff;
+  }
+  .btn-sm {
+    padding: 5px 10px;
+  }
+  
+  /* Tablets - max-width: 768px */
+  @media screen and (max-width: 768px) {
+    .header {
+      flex-wrap: wrap; /* Allows header to wrap for smaller screens */
+      padding: 10px;
+    }
+  
+    .header h1 {
+      font-size: large;
+      margin-top: 10px;
+    }
+  
+    .admin-info p {
+      margin-right: 10px;
+    }
+  
+    .table {
+      min-width: 600px;
+      margin-left: 20px;
+    }
+  
+    .btn-primary {
+      margin-left: 20px;
+    }
+  
+    .back{
+      width: 20px;
+      margin-left: 10px;
+    }
+  }
+  
+  /* Small screens (mobile) - max-width: 480px */
+  @media screen and (max-width: 480px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+    }
+  
+    .header h1 {
+      font-size: 18px;
+    }
+  
+    .admin-info {
+      align-items: flex-start;
+      width: 100%; /* Ensures it takes up full width */
+      justify-content: space-between;
+    }
+  
+    .admin-info p,
+    .logout {
+      margin-bottom: 5px; /* Adds space between elements */
+    }
+  
+    .container {
+      padding: 10px;
+    }
+  
+    .table {
+      min-width: 100%; /* Make the table fit to screen width */
+      margin-left: 0; /* Remove the margin for smaller screens */
+      font-size: smaller;
+    }
+  
+    .btn-primary {
+      width: 100%; /* Button takes full width */
+      margin-left: 0;
+    }
+  
+    .actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .actions button {
+      width: 100%; /* Makes buttons stack and take full width */
+    }
+  }

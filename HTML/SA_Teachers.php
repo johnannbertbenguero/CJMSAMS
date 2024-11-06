@@ -6,7 +6,7 @@
     <title>Christ Jezus Montessori School Inc. Student Attendance Monitoring System</title>
     <link rel="icon" href="../Images/CJMS.png" type="image/png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../Css/SA_Teachers.css"> <!-- Link to external CSS -->
+    <link rel="stylesheet" href="../Css/SuperAdmin_adding.css"> <!-- Link to external CSS -->
 </head>
 <body>
 
@@ -17,6 +17,7 @@
         </div>
         <div class="admin-info">
             <p>Admin Name</p>
+            <a href="Change_password.html" class="Change_password">Change Password</a>
             <a href="Account.php" class="logout">Logout</a>
         </div>
     </div>

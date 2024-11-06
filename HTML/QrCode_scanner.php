@@ -14,7 +14,6 @@
 <body>
   <div class="header">
     <h1>QR Code Scanner</h1>
-    
     <!-- Back button -->
     <a id="backButton" class="back-button" href="javascript:history.back();">
       <img src="../Images/arrowback.png" alt="back" class="back">
@@ -22,7 +21,7 @@
     
     <div class="admin-info">
       <p>Admin Name</p>
-      
+      <a href="Change_password.html" class="Change_password">Change Password</a>
       <!-- Logout button -->
       <a href="Account.php" class="logout">Logout</a>
     </div>
