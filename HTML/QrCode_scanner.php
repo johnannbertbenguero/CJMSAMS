@@ -4,28 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Christ Jezus Montessori School Inc. Student Attendance Monitoring System</title>
-  
-  <!-- Linking the favicon -->
-  <link rel="icon" href="../Images/CJMS.png" type="image/png">
-  
-  <!-- Linking the CSS file -->
-  <link rel="stylesheet" href="../Css/QrCode_scanner.css">
+  <link rel="icon" href="../Images/CJMS.png" type="image/png">  <!-- Linking the favicon --> 
+  <link rel="stylesheet" href="../Css/QrCode_scanner.css"> <!-- Linking the CSS file -->
 </head>
 <body>
-  <div class="header">
-    <h1>QR Code Scanner</h1>
-    <!-- Back button -->
-    <a id="backButton" class="back-button" href="javascript:history.back();">
-      <img src="../Images/arrowback.png" alt="back" class="back">
-    </a>
-    
-    <div class="admin-info">
-      <p>Admin Name</p>
-      <a href="Change_password.html" class="Change_password">Change Password</a>
-      <!-- Logout button -->
-      <a href="Account.php" class="logout">Logout</a>
+      <!-- Header -->
+      <div class="header">
+        <div class="title">Qr Code Scanner</div>
+        <div class="admin-name">Guard Name</div>
+        <div class="menu-container">
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger Menu Icon -->
+            <div class="menu">
+                <a href="Change_password.php" class="Change_password">Change Password</a>
+                <a href="Login.php" class="logout">Logout</a>
+            </div>
+        </div>
     </div>
-  </div>
   
   <div class="container">
     <div class="scanner-container">
@@ -47,9 +41,6 @@
       <p><strong>Status:</strong> <span id="attendance-status">Waiting for scan...</span></p>
       <br>
     </div>
-     <div class="confirmCredentials">
-      <button id="confirm-button" onclick="confirmCredentials()">Confirm Info</button><!-- Add Confirm button -->
-     </div>
     
   </div>
 

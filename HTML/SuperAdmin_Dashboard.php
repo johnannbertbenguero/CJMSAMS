@@ -8,14 +8,19 @@
     <link rel="stylesheet" href="../Css/SuperAdmin_Dashboard.css">
 </head>
 <body>
-    <header>
-        <h1>Dashboard</h1>
-        <div class="admin-profile">
-          <span>Admin Name</span> 
-          <a href="Change_password.html" class="Change_password">Change Password</a>
-          <a href="Account.php" class="logout">Logout</a> <!-- Link to logout page -->
+            <!-- Header -->
+    <div class="header">
+        <div class="title">Dashboard</div>
+        <div class="admin-name">Admin Name</div>
+        <div class="menu-container">
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger Menu Icon -->
+            <div class="menu">
+                <a href="Change_password.php" class="Change_password">Change Password</a>
+                <a href="Login.php" class="logout">Logout</a>
+            </div>
         </div>
-      </header>
+    </div>
+
     <main class="dashboard-container">
       <a href="SA_Teachers.php" class="card-link">
         <div class="module-card">
@@ -36,5 +41,7 @@
       <footer>
         <p>&copy; 2024 Students Attendance Monitoring System</p>
       </footer>
+
+      <script src="../Javascript/Menu_bar.js"></script>
 </body>
 </html>

@@ -17,10 +17,13 @@
             <a href="SA_Students.php"><img src="../Images/arrowback.png" alt="arrow back" class="back"> </a>
             <h1 id="strandTitle"></h1>
         </div>
-        <div class="admin-info">
-            <p>Admin Name</p>
-            <a href="Change_password.html" class="Change_password">Change Password</a>
-            <a href="Account.php" class="logout">Logout</a>
+        <div class="admin-info">Admin Name</div>
+        <div class="menu-container">
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger Menu Icon -->
+            <div class="menu">
+                <a href="Change_password.html" class="Change_password">Change Password</a>
+                <a href="Login.php" class="logout">Logout</a>
+            </div>
         </div>
     </div>
 
