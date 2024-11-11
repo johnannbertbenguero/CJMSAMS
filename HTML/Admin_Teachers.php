@@ -6,7 +6,7 @@
     <title>Christ Jezus Montessori School Inc. Student Attendance Monitoring System</title>
     <link rel="icon" href="../Images/CJMS.png" type="image/png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../Css/Admin_Teachers.css"> <!-- Link to external CSS -->
+    <link rel="stylesheet" href="../CSS/Admin_Teachers.css"> <!-- Link to external CSS -->
 </head>
 <body>
 
@@ -94,5 +94,6 @@
     </div>
     <script src="../Javascript/Adding_teacher.js"></script>
     <script src="../Javascript/Menu_bar.js"></script>
+
 </body>
 </html>

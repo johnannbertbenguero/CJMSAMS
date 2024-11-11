@@ -3,6 +3,7 @@ function showTab(tabName) {
     document.getElementById("classlist").style.display = "none";
     document.getElementById("qrCode").style.display = "none";
     document.getElementById("attendanceLog").style.display = "none";
+    document.getElementById("analytics").style.display = "none";
 
     document.getElementById("classlistTab").classList.remove("active");
     document.getElementById("qrTab").classList.remove("active");
@@ -158,4 +159,76 @@ function changePassword(event) {
 function goBack() {
     window.history.back(); 
 }
-        
+
+function createAttendanceChart(labels, data) {
+    const ctx = document.getElementById('attendanceChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar', // Choose 'pie', 'bar', or 'line' based on your preference
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Monthly Attendance Rate (%)',
+                data: data,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100
+                }
+            }
+        }
+    });
+}
+
+async function fetchChartData() {
+    try {
+        // Replace with your actual backend URL
+        const response = await fetch('backend-url-for-attendance-data');
+        if (response.ok) {
+            const data = await response.json();
+
+            // Create labels for all months of the year with the current year
+            const currentYear = new Date().getFullYear();
+            const labels = [
+                `January ${currentYear}`, `February ${currentYear}`, `March ${currentYear}`,
+                `April ${currentYear}`, `May ${currentYear}`, `June ${currentYear}`,
+                `July ${currentYear}`, `August ${currentYear}`, `September ${currentYear}`,
+                `October ${currentYear}`, `November ${currentYear}`, `December ${currentYear}`
+            ];
+
+            // If no data is available, we'll leave the data empty (0 for now)
+            const attendanceRates = new Array(12).fill(0);  // 12 months, all attendance data set to 0
+
+            // Set the total students and attendance rate if available in data
+            document.getElementById("totalStudents").textContent = data.totalStudents || "0";
+            document.getElementById("attendanceRate").textContent = data.overallAttendanceRate || "0%";
+
+            // Create the chart with the fetched data (or empty data)
+            createAttendanceChart(labels, attendanceRates);
+        } else {
+            throw new Error("Network response was not ok.");
+        }
+    } catch (error) {
+        console.error('Error fetching chart data:', error);
+
+        // If there’s an error or no data, still display the months with empty data
+        const currentYear = new Date().getFullYear();
+        const labels = [
+            `January ${currentYear}`, `February ${currentYear}`, `March ${currentYear}`,
+            `April ${currentYear}`, `May ${currentYear}`, `June ${currentYear}`,
+            `July ${currentYear}`, `August ${currentYear}`, `September ${currentYear}`,
+            `October ${currentYear}`, `November ${currentYear}`, `December ${currentYear}`
+        ];
+
+        const attendanceRates = new Array(12).fill(0);  // Empty data for now
+        createAttendanceChart(labels, attendanceRates);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', fetchChartData);

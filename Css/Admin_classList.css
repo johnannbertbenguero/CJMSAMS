@@ -69,10 +69,6 @@ body {
   border-bottom: 1px solid #ddd;
 }
 
-.menu.show-menu {
-  display: block;
-}
-
 .menu a:last-child {
   border-bottom: none;
 }

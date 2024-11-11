@@ -122,4 +122,3 @@ function deleteTeacher(index) {
     // updateTeacherTable(); // Update the table
     loadTeachers();
 }
-
