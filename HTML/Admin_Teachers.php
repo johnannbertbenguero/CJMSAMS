@@ -6,20 +6,20 @@
     <title>Christ Jezus Montessori School Inc. Student Attendance Monitoring System</title>
     <link rel="icon" href="../Images/CJMS.png" type="image/png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../Css/SA_Teachers.css"> <!-- Link to external CSS -->
+    <link rel="stylesheet" href="../Css/Admin_Teachers.css"> <!-- Link to external CSS -->
 </head>
 <body>
 
     <div class="header">
         <div class="back-button">
-            <a href="SuperAdmin_Dashboard.php"><img src="../Images/arrowback.png" alt="arrow back" class="back"> </a>
-            <h1>Teachers List</h1>
+            <a href="Admin_Dashboard.php"><img src="../Images/arrowback.png" alt="arrow back" class="back"> </a>
+            <h1>Add Teacher</h1>
         </div>
         <div class="admin-info">Admin Name</div>
         <div class="menu-container">
             <div class="menu-icon" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger Menu Icon -->
             <div class="menu">
-                <a href="Change_password.html" class="Change_password">Change Password</a>
+                <a href="Change_password.php" class="Change_password">Change Password</a>
                 <a href="Login.php" class="logout">Logout</a>
             </div>
         </div>
@@ -29,7 +29,9 @@
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTeacherModal">
             Add New Teacher
         </button>
-    
+        <button type="button" class="btn btn-import" onclick="importData()">
+            Import
+        </button>
         <div class="table-responsive">
     <table class="table table-bordered table-striped mt-4">
         <thead>
@@ -91,5 +93,6 @@
         </div>
     </div>
     <script src="../Javascript/Adding_teacher.js"></script>
+    <script src="../Javascript/Menu_bar.js"></script>
 </body>
 </html>

@@ -13,8 +13,8 @@ body {
 
 .header {
   background-color: #26308b;
-  padding: 20px;
   color: #fff;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,23 +31,46 @@ body {
   font-size: 24px;
 }
 .admin-info {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  font-size: 1em;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: 20px;
 }
 
 .admin-info p {
-  margin-right: 20px; 
+  margin-right: 10px; 
   margin-bottom: 0;    
 }
 
-.logout {
-  color: #fff;
-  text-decoration: none;
+.menu-container {
+  position: relative;
 }
 
-.logout:hover {
-  text-decoration: underline;
+.menu-icon {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu a {
+  display: block;
+  color: #26308b;
+  padding: 20px 20px;
+  text-decoration: none;
+  border-bottom: 1px solid #ddd;
+}
+
+.menu a:last-child {
+  border-bottom: none;
 }
 
 .container {
@@ -98,11 +121,25 @@ body {
   }
 
 .btn-primary {
-  margin-top: 10px;
-  background-color: #26308b;
-  border-color: #26308b;
-  font-size: small;
-  margin-left: 80px;
+    margin-top: 30px;
+    background-color: #26308b;
+    border-color: #26308b;
+    font-size: smaller;
+    margin-left: 80px;
+  
+}
+.btn-import{
+    margin-top: 30px;
+    background-color: #26308b;
+    border-color: #26308b;
+    font-size: smaller;
+    margin-left: 20px;
+    color: white;
+  }
+
+.btn-import:hover{
+  background-color: #3543be;
+  color: white;
 }
 
 .btn-success {

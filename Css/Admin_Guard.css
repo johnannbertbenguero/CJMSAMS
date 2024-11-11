@@ -113,17 +113,29 @@ body {
   }
   
     
-    .actions button {
+.actions button {
     margin: 0 5px;
-    }
+}
   
-  .btn-primary {
+.btn-primary {
     margin-top: 30px;
     background-color: #26308b;
     border-color: #26308b;
     font-size: smaller;
-  }
-  
+}
+.btn-import{
+    margin-top: 30px;
+    background-color: #26308b;
+    border-color: #26308b;
+    font-size: smaller;
+    margin-left: 20px;
+    color: white;
+}
+
+.btn-import:hover{
+  background-color: #3543be;
+  color: white;
+}
   .btn-success {
     background-color: #26308b;
     border-color: #26308b;

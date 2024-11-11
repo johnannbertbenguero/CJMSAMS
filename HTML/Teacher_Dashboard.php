@@ -6,22 +6,22 @@
     <title>Student Attendance Monitoring System</title>
     <link rel="icon" href="../Images/CJMS.png" type="image/png">
     <link rel="stylesheet" href="../Css/Teacher_Dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js Library -->
 </head>
 <body>
 
-      <!-- Header -->
+    <!-- Header -->
     <div class="header">
         <div class="title">Dashboard</div>
         <div class="admin-name">Teacher Name</div>
         <div class="menu-container">
-            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger Menu Icon -->
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
             <div class="menu">
                 <a href="Change_password.php" class="Change_password">Change Password</a>
                 <a href="Login.php" class="logout">Logout</a>
             </div>
         </div>
     </div>
-    
 
     <!-- Main Container -->
     <div class="container">
@@ -33,15 +33,15 @@
                     <option value="Kinder 1">Kinder 1</option>
                     <option value="Kinder 2">Kinder 2</option>
                     <option value="Grade 1">Grade 1</option>
-                    <option value="Grade 1">Grade 2</option>
-                    <option value="Grade 1">Grade 3</option>
-                    <option value="Grade 1">Grade 4</option>
-                    <option value="Grade 1">Grade 5</option>
-                    <option value="Grade 1">Grade 6</option>
-                    <option value="Grade 1">Grade 7</option>
-                    <option value="Grade 1">Grade 8</option>
-                    <option value="Grade 1">Grade 9</option>
-                    <option value="Grade 1">Grade 10</option>
+                    <option value="Grade 2">Grade 2</option>
+                    <option value="Grade 3">Grade 3</option>
+                    <option value="Grade 4">Grade 4</option>
+                    <option value="Grade 5">Grade 5</option>
+                    <option value="Grade 6">Grade 6</option>
+                    <option value="Grade 7">Grade 7</option>
+                    <option value="Grade 8">Grade 8</option>
+                    <option value="Grade 9">Grade 9</option>
+                    <option value="Grade 10">Grade 10</option>
                     <option value="Grade 11">Grade 11</option>
                     <option value="Grade 12">Grade 12</option>
                 </select>
@@ -58,16 +58,15 @@
                     <option value="">Select Section</option>
                     <option value="A">Section A</option>
                     <option value="B">Section B</option>
-                    <option value="B">Section c</option>
-
-                    <!-- Add more sections here -->
+                    <option value="C">Section C</option>
                 </select>
             </div>
-            
+
             <div class="tabs">
                 <button onclick="showTab('classlist')" class="active" id="classlistTab">Classlist</button>
                 <button onclick="showTab('qrCode')" id="qrTab">QR Code Scanner</button>
                 <button onclick="showTab('attendanceLog')" id="logTab">Attendance Logs</button>
+                <button onclick="showTab('analytics')" id="analyticsTab">Analytics</button>
             </div>
         </div>
 
@@ -95,11 +94,10 @@
             <div id="qrCode" class="tab-content">
                 <h2>QR Code Scanner</h2>
                 <div class="scanner-container">
-                    <div id="qr-video"> <!-- QR Video Container -->
+                    <div id="qr-video">
                         <p id="qr-result">Waiting for scan...</p>
                     </div>
-                    
-                    <div class="student-info"> <!-- Student Info Container -->
+                    <div class="student-info">
                         <h2>Student Info</h2>
                         <p><strong>Student Name:</strong> <span id="student-name"></span></p>
                         <p><strong>Grade Level:</strong> <span id="grade-level"></span></p>
@@ -108,7 +106,6 @@
                     </div>
                 </div>
             </div>
-            
 
             <!-- Attendance Logs -->
             <div id="attendanceLog" class="tab-content" style="display: none;">
@@ -137,9 +134,22 @@
                     </tbody>
                 </table>
             </div>
+
+            <!-- Analytics -->
+            <div id="analytics" class="tab-content" style="display: none;">
+                <h2>Analytics</h2>
+                <div class="analytics-summary">
+                    <p><strong>Total Students:</strong> <span id="totalStudents">0</span></p>
+                    <p><strong>Overall Attendance Rate:</strong> <span id="attendanceRate">0%</span></p>
+                </div>
+                <!-- Chart Container -->
+                <canvas id="attendanceChart" width="400" height="200"></canvas>
+            </div>
         </div>
     </div>
 
     <script src="../Javascript/Teacher_Dashboard.js"></script>
+    <script src="../Javascript/Chart.js"></script>
+
 </body>
 </html>

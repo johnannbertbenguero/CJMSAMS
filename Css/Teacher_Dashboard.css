@@ -217,6 +217,18 @@ body {
     font-weight: bold;
     margin-bottom: 20px;
 }
+/* Chart Container */
+.chart-container {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#attendanceChart {
+    width: 80%;
+    max-width: 700px;
+}
 /* Media Queries for Mobile and Tablet Devices */
 @media (max-width: 768px) {
     .header {

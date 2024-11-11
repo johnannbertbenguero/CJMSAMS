@@ -6,13 +6,13 @@
     <title>Christ Jezus Montessori School Inc. Student Attendance Monitoring System</title>
     <link rel="icon" href="../Images/CJMS.png" type="image/png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../Css/SA_Guard.css"> <!-- Link to external CSS -->
+    <link rel="stylesheet" href="../CSS/Admin_Guard.css"> <!-- Link to external CSS -->
 </head>
 <body>
 
     <div class="header">
         <div class="back-button">
-            <a href="SuperAdmin_Dashboard.php"><img src="../Images/arrowback.png" alt="arrow back" class="back"> </a>
+            <a href="Admin_Dashboard.php"><img src="../Images/arrowback.png" alt="arrow back" class="back"> </a>
             <h1>Guards List</h1>
         </div>
         <div class="admin-info">Admin Name</div>
@@ -29,7 +29,9 @@
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addGuardModal">
             Add New Guard
         </button>
-    
+        <button type="button" class="btn btn-import" onclick="importData()">
+            Import
+        </button>
         <div class="table-responsive">
             <table class="table table-bordered table-striped mt-4">
                 <thead>
@@ -89,6 +91,6 @@
             </div>
         </div>
     </div>
-    <script src="../Javascript/SA_Guard.js"></script>
+    <script src="../Javascript/Admin_Guard.js"></script>
 </body>
 </html>

@@ -69,10 +69,28 @@ body {
   border-bottom: 1px solid #ddd;
 }
 
+.menu.show-menu {
+  display: block;
+}
+
 .menu a:last-child {
   border-bottom: none;
 }
+.select-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 80px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  width: 100%;
+  max-width: 1000px; /* Matches with the .container width */
+}
 
+/* Main Container */
 .container {
   margin-top: 30px;
   padding: 30px 80px;
@@ -81,6 +99,18 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   font-size: smaller;
+  max-width: 1000px; /* Matches with the .container width */
+}
+
+/* Select elements styling inside the select-container */
+.select-container select {
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  width: 200px;
 }
 
 .modal-header {
@@ -108,7 +138,6 @@ body {
   gap: 10px; /* Adds space between buttons */
 }
 
-  
   .actions button {
   margin: 0 5px;
   }
@@ -118,6 +147,8 @@ body {
   background-color: #26308b;
   border-color: #26308b;
   font-size: smaller;
+  margin-right: 20px;
+
 }
 
 .btn-success {

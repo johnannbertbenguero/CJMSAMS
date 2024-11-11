@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Students Grade Level</title>
-  <link rel="stylesheet" href="../Css/SA_Students.css">
+  <link rel="stylesheet" href="../Css/Admin_Students.css">
   <script src="../Javascript/SA_Students.js" defer></script>
 </head>
 <body>
   <div class="header">
       <div class="back-button">
-          <a id="backButton" class="back-button" href="SuperAdmin_Dashboard.php">  <!-- Back button -->
+          <a id="backButton" class="back-button" href="Admin_Dashboard.php">  <!-- Back button -->
               <img src="../Images/arrowback.png" alt="back" class="back">
           </a>
           <h1>Students Grade Level</h1>
@@ -24,6 +24,7 @@
             </div>
         </div>
   </div>
+  
   <main class="dashboard-container">
     <!-- JavaScript will generate buttons here -->
   </main>

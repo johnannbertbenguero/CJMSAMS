@@ -7,45 +7,81 @@
     <title>Christ Jezus Montessori School Inc. Student Attendance Monitoring System</title>
     <link rel="icon" href="../Images/CJMS.png" type="image/png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../Css/SA_classList.css"> <!-- Link to external CSS -->
+    <link rel="stylesheet" href="../CSS/Admin_classList.css"> <!-- Link to external CSS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
 </head>
 <body>
     <div class="header">
         <div class="back-button">
-            <a href="SA_Students.php"><img src="../Images/arrowback.png" alt="arrow back" class="back"> </a>
-            <h1 id="strandTitle"></h1>
+            <a href="Admin_Dashboard.php" href="javascript:history.back();"><img src="../Images/arrowback.png" alt="arrow back" class="back"> </a>
+            <h1>Add Student</h1>
         </div>
         <div class="admin-info">Admin Name</div>
         <div class="menu-container">
             <div class="menu-icon" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger Menu Icon -->
             <div class="menu">
-                <a href="Change_password.html" class="Change_password">Change Password</a>
+                <a href="Change_password.php" class="Change_password">Change Password</a>
                 <a href="Login.php" class="logout">Logout</a>
             </div>
         </div>
     </div>
-
+    <div class="select-container">
+        <select class="form-control" id="selectGrade">
+            <option value="">Select Grade Level</option>
+            <option value="Kinder 1">Kinder 1</option>
+            <option value="Kinder 2">Kinder 2</option>
+            <option value="Grade 1">Grade 1</option>
+            <option value="Grade 2">Grade 2</option>
+            <option value="Grade 3">Grade 3</option>
+            <option value="Grade 4">Grade 4</option>
+            <option value="Grade 5">Grade 5</option>
+            <option value="Grade 6">Grade 6</option>
+            <option value="Grade 7">Grade 7</option>
+            <option value="Grade 8">Grade 8</option>
+            <option value="Grade 9">Grade 9</option>
+            <option value="Grade 10">Grade 10</option>
+            <option value="Grade 11">Grade 11</option>
+            <option value="Grade 12">Grade 12</option>
+        </select>
+        <select class="form-control" id="selectSection">
+             <option value="" disabled selected>Select Section</option>
+             <option value="sectionA">Section A</option>
+             <option value="sectionB">Section B</option>
+        </select>
+        <select class="form-control" id="selectStrand">
+            <option value="">Select Strand</option>
+            <option value="ABM">ABM</option>
+            <option value="STEM">STEM</option>
+            <option value="HUMSS">HUMSS</option>
+            <option value="GAS">GAS</option>
+        </select>
+    </div>
+    
     <div class="container">
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addStudentModal" onclick="prepareAddStudentForm()">
             Add New Student
         </button>
-
-        <table class="table table-bordered table-striped mt-4">
-            <thead>
-                <tr>
-                    <th>Student ID Number</th>
-                    <th>Last Name</th>
-                    <th>First Name</th>
-                    <th>Guardian Contact Number</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="studentTableBody">
-                <!-- Students List will be dynamically added here -->
-            </tbody>
-        </table>
+        <button type="button" class="btn btn-primary" onclick="importData()">
+            Import
+        </button>
+    
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped mt-4">
+                <thead>
+                    <tr>
+                        <th>Student ID Number</th>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Guardian Contact Number</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTableBody">
+                    <!-- Students List will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <!-- Modal for Adding/Updating Student -->
@@ -62,16 +98,16 @@
                 <div class="modal-body">
                     <form id="studentForm">
                         <div class="form-group">
-                            <label for="studentNumber">Student Number:</label>
-                            <input type="text" class="form-control" id="studentNumber" required>
-                        </div>
-                        <div class="form-group">
                             <label for="lastName">Last Name:</label>
                             <input type="text" class="form-control" id="lastName" required>
                         </div>
                         <div class="form-group">
                             <label for="firstName">First Name:</label>
                             <input type="text" class="form-control" id="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Middle Name:</label>
+                            <input type="text" class="form-control" id="lastName" required>
                         </div>
                         <div class="form-group">
                             <label for="guardianContactNumber">Guardian Contact Number:</label>
@@ -110,7 +146,7 @@
         </div>
     </div>
 
-    <script src="../Javascript/SA_StrandClassList.js"></script>
+    <script src="../Javascript/Admin_ClassList.js"></script>
     <script src="../Javascript/Adding_student.js"></script>
 
 
